@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 def home():
     return render_template('index.html')
 
-@app.route("app.py", methods=["POST"])
+@app.route("https://github.com/mshan2923/ForTest/blob/838738aeaaf0b1b0f3fa1c4d0fe95fc427d8bccf/index.html", methods=["POST"])
 def movie_post():
     url_receive = request.form['url_give']
     comment_receive = request.form['comment_give']
@@ -41,7 +41,7 @@ def movie_post():
 
     return jsonify({'msg':'저장완료!'})
 
-@app.route("app.py", methods=["GET"])
+@app.route("https://github.com/mshan2923/ForTest/blob/838738aeaaf0b1b0f3fa1c4d0fe95fc427d8bccf/index.html", methods=["GET"])
 def movie_get():
     all_movies = list(db.movies.find({},{'_id':False}))
     return jsonify({'result':all_movies})
